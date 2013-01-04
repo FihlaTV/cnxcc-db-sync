@@ -94,7 +94,7 @@ class CheckClients
 	private function update($kvp)
 	{
 		$sql		= "UPDATE `call` SET confirmed = '{$kvp['confirmed']}', max_amount = '{$kvp['local_max_amount']}',
-									 consumed_amount = '{$kvp['local_consumed_amount']}', start_timestamp = '{$kvp['start_timestamp']}'
+									 consumed_amount = '{$kvp['local_consumed_amount']}', start_timestamp = FROM_UNIXTIME({$kvp['start_timestamp']})
 									 WHERE call_id = '{$kvp['call_id']}'";
 		
 		$results	= $this->db->query($sql);		
@@ -103,7 +103,7 @@ class CheckClients
 	private function insert($kvp)
 	{
 		$sql		= "INSERT INTO `call` VALUES ('{$kvp['call_id']}', '{$kvp['confirmed']}', '{$kvp['local_max_amount']}',
-									 '{$kvp['local_consumed_amount']}', '{$kvp['start_timestamp']}',
+									 '{$kvp['local_consumed_amount']}', FROM_UNIXTIME({$kvp['start_timestamp']}),
 									 '{$this->clientID}')";
 		
 		$results	= $this->db->query($sql);
