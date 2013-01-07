@@ -102,12 +102,19 @@ class CheckClients
 	
 	private function insert($kvp)
 	{
+//		print_r($kvp);
+//		die("");
 		$sql		= "INSERT INTO `call` VALUES ('{$kvp['call_id']}', '{$kvp['confirmed']}', '{$kvp['local_max_amount']}',
 									 '{$kvp['local_consumed_amount']}', FROM_UNIXTIME({$kvp['start_timestamp']}),
-									 '{$this->clientID}')";
+									 '{$this->clientID}')";		
 		
-		$results	= $this->db->query($sql);
+		$this->db->query($sql);
 		
+		if (!isset($kvp['inip']))
+			return;
+		
+		$sql	= "INSERT INTO money_based_call VALUES ('{$kvp['call_id']}', {$kvp['cps']}, {$kvp['inip']}, {$kvp['finp']})";		
+		$this->db->query($sql);
 	}
 	
 	private function existsInDatabase($kvp)
