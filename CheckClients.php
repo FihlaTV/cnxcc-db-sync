@@ -75,7 +75,7 @@ class CheckClients
 	{
 		$callIDs = implode(',', $callIDArray);
 		
-		$sql = "DELETE FROM `call` WHERE call_id NOT IN ($callIDs)";
+		$sql = "DELETE FROM `call` WHERE client_id = '{$this->clientID}' AND call_id NOT IN ($callIDs) ";
 		
 		$this->db->query($sql);
 	}
