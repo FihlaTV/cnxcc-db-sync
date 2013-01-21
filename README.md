@@ -1,4 +1,19 @@
 cnxcc-db-sync
 =============
 
-XMLRPC client for cnxcc to synchronize in-memory information to persistent storage
+XMLRPC client for cnxcc to synchronize in-memory information to persistent storage. This script works as a helper for
+https://github.com/caruizdiaz/cnxcc-web.
+
+Usage
+=============
+
+<pre>
+    php php cnxcc-db-sync.php <sip-server-ip> <xmlrpc-port>
+</pre>
+
+To check and update the database in a more real-time fashion, it is recommended to run to script every 1 second
+
+</pre>
+    while true; do php cnxcc-db-sync.php 127.0.0.1 5060; sleep 1; done;
+</pre>
+
