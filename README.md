@@ -8,7 +8,7 @@ Usage
 =============
 
 <pre>
-    php php cnxcc-db-sync.php &#60;sip-server-ip&#62; &#60;xmlrpc-port&#62;
+    php cnxcc-db-sync.php &#60;sip-server-ip&#62; &#60;xmlrpc-port&#62;
 </pre>
 
 To check and update the database in a more real-time fashion, it is recommended to run to script every 1 second
