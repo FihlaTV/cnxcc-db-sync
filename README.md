@@ -13,7 +13,7 @@ Usage
 
 To check and update the database in a more real-time fashion, it is recommended to run to script every 1 second
 
-</pre>
+<pre>
     while true; do php cnxcc-db-sync.php 127.0.0.1 5060; sleep 1; done;
 </pre>
 
