@@ -23,3 +23,13 @@ To check and update the database in a more real-time fashion, it is recommended 
     while true; do php cnxcc-db-sync.php 127.0.0.1 5060; sleep 1; done;
 </pre>
 
+Troubleshooting
+=============
+
+- When the scripts freezes, for no apparent reason, maybe kamailio is wrongly configured 
+- Don't forget to enable tcp on Kamailio
+- Load xmlrpc module, and configure it using the following parameters:
+<pre>
+    modparam("xmlrpc", "route", "XMLRPC")
+</pre>
+Ignore any other parameters.
