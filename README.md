@@ -6,8 +6,7 @@ https://github.com/caruizdiaz/cnxcc-web.
 
 Dependencies
 =============
-xmlrpc module for php
-
+- xmlrpc module for php
 
 Usage
 =============
