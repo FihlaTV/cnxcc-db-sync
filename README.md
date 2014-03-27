@@ -4,8 +4,15 @@ cnxcc-db-sync
 XMLRPC client for cnxcc to synchronize in-memory information to persistent storage. This script works as a helper for
 https://github.com/caruizdiaz/cnxcc-web.
 
+Dependencies
+=============
+xmlrpc module for php
+
+
 Usage
 =============
+
+Database configuration should be put in "dbconfig.include.php"
 
 <pre>
     php cnxcc-db-sync.php &#60;sip-server-ip&#62; &#60;xmlrpc-port&#62;
